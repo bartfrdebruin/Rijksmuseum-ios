@@ -1,0 +1,6 @@
+module Pods_Rijks_Demo_Rijks_DemoUITests {
+  umbrella header "Pods-Rijks Demo-Rijks DemoUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

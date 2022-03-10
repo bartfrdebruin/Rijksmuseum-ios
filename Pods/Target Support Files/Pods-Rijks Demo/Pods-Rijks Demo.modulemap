@@ -1,0 +1,6 @@
+module Pods_Rijks_Demo {
+  umbrella header "Pods-Rijks Demo-umbrella.h"
+
+  export *
+  module * { export * }
+}
