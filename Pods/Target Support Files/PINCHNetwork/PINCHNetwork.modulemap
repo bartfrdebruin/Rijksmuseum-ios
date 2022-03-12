@@ -1,6 +1,0 @@
-module PINCHNetwork {
-  umbrella header "PINCHNetwork-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -16,7 +16,7 @@ final class AppController {
 
 	func startApp() {
 
-		let initialVC = ViewController()
+		let initialVC = RijksCollectionViewController.make()
 		window.rootViewController = initialVC
 		window.makeKeyAndVisible()
 	}

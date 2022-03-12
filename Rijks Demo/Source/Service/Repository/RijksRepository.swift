@@ -9,36 +9,41 @@ import Foundation
 
 protocol RijksRepositoryProtocol {
 
-	func getCollection(completion: @escaping (_ result: Result<[RijksCollectionResponse], Error>) -> Void)
+	func getCollection(completion: @escaping (_ result: Result<RijksCollection, Error>) -> Void)
 	func getCollectionDetail(objectNumber: String, completion: @escaping (_ result: Result<RijksDetailResponse, Error>) -> Void)
 }
 
 final class RijksRepository: RijksRepositoryProtocol {
 
-	private let rijksRequest: RijksRequest
+	private let rijksRequest: RijksRequestProtocol
 
 	init(rijksRequest: RijksRequest) {
 		self.rijksRequest = rijksRequest
 	}
 
-	func getCollection(completion: @escaping (_ result: Result<[RijksCollectionResponse], Error>) -> Void) {
+	func getCollection(
+		completion: @escaping (_ result: Result<RijksCollection, Error>) -> Void) {
 
-		rijksRequest.getCollection { task, result in
+		rijksRequest.getCollection { response in
 
-			switch result {
+			switch response {
 			case .success(let response):
-				completion(.success(response))
+				let collection = RijksCollection(collectionResponse: response)
+				completion(.success(collection))
 			case .failure(let error):
 				completion(.failure(error))
 			}
 		}
 	}
 
-	func getCollectionDetail(objectNumber: String, completion: @escaping (_ result: Result<RijksDetailResponse, Error>) -> Void) {
+	func getCollectionDetail(
+		objectNumber: String,
+		completion: @escaping (_ result: Result<RijksDetailResponse, Error>) -> Void) {
 
-		rijksRequest.getCollectionDetail(objectNumber: objectNumber, completion: { task, result in
+		rijksRequest.getCollectionDetail(objectNumber: objectNumber,
+											completion: { response in
 
-			switch result {
+			switch response {
 			case .success(let response):
 				completion(.success(response))
 			case .failure(let error):

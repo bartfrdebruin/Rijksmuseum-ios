@@ -6,9 +6,20 @@
 //
 
 import Foundation
-import PINCHNetwork
 
 enum RijksRoute: NetworkRoute {
+
+	var body: Data? {
+		return nil
+	}
+
+	var queryParameters: [String : Any]? {
+		return ["key": "0fiuZFh4"]
+	}
+
+	var headers: [String : String]? {
+		return ["key": "0fiuZFh4"]
+	}
 
 	case collection
 	case detail(objectNumber: String)

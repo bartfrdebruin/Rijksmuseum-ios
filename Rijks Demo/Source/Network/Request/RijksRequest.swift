@@ -6,34 +6,46 @@
 //
 
 import Foundation
-import PINCHNetwork
 
-protocol RijksRequest {
+protocol RijksRequestProtocol {
 
-	@discardableResult
-	func getCollection(completion: @escaping (_ task: NetworkTask?, _ result: Result<[RijksCollectionResponse], NetworkError>) -> Void) -> NetworkTask?
-
-	@discardableResult
-	func getCollectionDetail(objectNumber: String, completion: @escaping (_ task: NetworkTask?, _ result: Result<RijksDetailResponse, NetworkError>) -> Void) -> NetworkTask?
+	func getCollection(completion: @escaping (_ result: Result<RijksCollectionResponse, Error>) -> Void)
+	func getCollectionDetail(objectNumber: String, completion: @escaping (_ result: Result<RijksDetailResponse, Error>) -> Void)
 }
 
-extension NetworkManager: RijksRequest {
+final class RijksRequest: RijksRequestProtocol {
 
-	@discardableResult
-	func getCollection(completion: @escaping (_ task: NetworkTask?, _ result: Result<[RijksCollectionResponse], NetworkError>) -> Void) -> NetworkTask? {
+	private let networkManager: NetworkManager
 
-		let route = RijksRoute.collection
-		let task = requestDecodable(for: route, completion: completion)
-		task?.resume()
-		return task
+	init(networkManager: NetworkManager) {
+		self.networkManager = networkManager
 	}
 
-	@discardableResult
-	func getCollectionDetail(objectNumber: String, completion: @escaping (_ task: NetworkTask?, _ result: Result<RijksDetailResponse, NetworkError>) -> Void) -> NetworkTask? {
+	func getCollection(completion: @escaping (Result<RijksCollectionResponse, Error>) -> Void) {
 
-		let route = RijksRoute.detail(objectNumber: objectNumber)
-		let task = requestDecodable(for: route, completion: completion)
-		task?.resume()
-		return task
+		networkManager.getCollection { response in
+
+			switch response {
+			case .success(let response):
+				completion(.success(response))
+			case .failure(let error):
+				completion(.failure(error))
+			}
+		}
+	}
+
+	func getCollectionDetail(objectNumber: String, completion: @escaping (Result<RijksDetailResponse, Error>) -> Void) {
+
+		networkManager.getCollectionDetail(objectNumber: objectNumber,
+										   completion: { response in
+
+			switch response {
+			case .success(let response):
+				completion(.success(response))
+			case .failure(let error):
+				completion(.failure(error))
+			}
+		})
 	}
 }
+

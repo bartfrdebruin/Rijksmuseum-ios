@@ -1,24 +1,16 @@
 PODS:
-  - Alamofire (4.9.1)
-  - PINCHNetwork/Alamofire (0.5.2):
-    - Alamofire (~> 4.7)
-    - PINCHNetwork/Core
-  - PINCHNetwork/Core (0.5.2)
+  - Kingfisher (7.2.0)
 
 DEPENDENCIES:
-  - PINCHNetwork/Alamofire
-  - PINCHNetwork/Core
+  - Kingfisher
 
 SPEC REPOS:
-  "git@bitbucket.org:justpinch/podspecs.git":
-    - PINCHNetwork
   trunk:
-    - Alamofire
+    - Kingfisher
 
 SPEC CHECKSUMS:
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  PINCHNetwork: 6f54e5da37055c001618cd2b62b297dbd5361eb2
+  Kingfisher: 3ac0b75b155cabc0e544877d1a4deea29feece92
 
-PODFILE CHECKSUM: a2b0443cbf6c0abe8fe358ad9f01d6958a1117b9
+PODFILE CHECKSUM: 0f897df4667f0dbb3fdf32f0309767a49e55f57f
 
 COCOAPODS: 1.11.2

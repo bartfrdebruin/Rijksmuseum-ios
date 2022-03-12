@@ -8,8 +8,7 @@ use_modular_headers!
 target 'Rijks Demo' do
 
   # Pods for Rijks Demo
-  pod 'PINCHNetwork/Core'
-  pod 'PINCHNetwork/Alamofire'
+  pod 'Kingfisher'
 
   target 'Rijks DemoTests' do
     inherit! :search_paths

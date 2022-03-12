@@ -5,12 +5,12 @@
 //  Created by Bart on 11/03/2022.
 //
 
-import PINCHNetwork
+import Foundation
 
 struct RijksEnvironment: NetworkEnvironment {
 
 	var baseURL: URL {
-		return URL(string: "https://data.rijksmuseum.nl/object-metadata/api/")!
+		return URL(string: "https://www.rijksmuseum.nl/api/")!
 	}
 
 	var defaultHeaders: [String: String]? {

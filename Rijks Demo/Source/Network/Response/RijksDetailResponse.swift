@@ -17,5 +17,5 @@ struct RijksDetailResponse: Decodable {
 	let titles: [String]
 	let objectCollection: [String]
 	let roles: [String]
-	let makers: [RijksMakersResponse]
+	let makers: [RijksMakerResponse]
 }
