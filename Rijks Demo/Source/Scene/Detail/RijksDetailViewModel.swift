@@ -28,8 +28,8 @@ final class RijksDetailViewModel: RijksDetailViewModelProtocol {
 	private let objectNumber: String
 	private let rijksRepository: RijksRepositoryProtocol
 
-	init(objectID: String, rijksRepository: RijksRepositoryProtocol) {
-		self.objectNumber = objectID
+	init(objectNumber: String, rijksRepository: RijksRepositoryProtocol) {
+		self.objectNumber = objectNumber
 		self.rijksRepository = rijksRepository
 	}
 

@@ -20,8 +20,10 @@ enum RijksRoute: NetworkRoute {
 				"key": "0fiuZFh4",
 				"p": page
 			]
-		case .detail(let objectNumber):
-			return nil
+		case .detail:
+			return [
+				"key": "0fiuZFh4",
+			]
 		}
 	}
 

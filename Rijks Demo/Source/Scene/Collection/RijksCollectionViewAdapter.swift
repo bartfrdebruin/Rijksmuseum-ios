@@ -90,7 +90,7 @@ extension RijksCollectionViewAdapter: UICollectionViewDataSource {
 				fatalError()
 			}
 
-		view.configure(text: section.headerState)
+		view.configure(text: section.header)
 		return view
 	}
 

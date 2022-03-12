@@ -63,7 +63,7 @@ final class RijksCollectionViewModel: RijksCollectionViewModelProtocol {
 			case .success(let collection):
 
 				self.sections.append(RijksCollectionSection(
-					headerState: "Sectie \(self.sections.count + 1)",
+					header: "Sectie \(self.sections.count + 1)",
 					items: collection.artObjects
 				))
 

@@ -37,7 +37,10 @@ extension RijksDetailViewController {
 
 		let networkManager = NetworkManager(environment: RijksEnvironment())
 		let repository = RijksRepository(networkManager: networkManager)
-		let viewModel = RijksDetailViewModel(objectID: objectID, rijksRepository: repository)
+		let viewModel = RijksDetailViewModel(
+			objectNumber: objectNumber,
+			rijksRepository: repository
+		)
 
 		return RijksDetailViewController(viewModel: viewModel)
 	}

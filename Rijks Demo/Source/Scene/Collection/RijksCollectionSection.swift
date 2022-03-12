@@ -9,7 +9,7 @@ import Foundation
 
 struct RijksCollectionSection: Equatable {
 
-	var headerState: String
+	var header: String
 	let items: [RijksArtObject]
 	var count: Int { items.count }
 
