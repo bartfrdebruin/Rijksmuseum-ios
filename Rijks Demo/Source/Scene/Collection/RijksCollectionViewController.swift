@@ -165,7 +165,8 @@ extension RijksCollectionViewController {
 				return
 			}
 
-
+			let vc = RijksDetailViewController.make(objectID: object.objectNumber)
+			self.present(vc, animated: true, completion: nil)
 		}
 	}
 }
