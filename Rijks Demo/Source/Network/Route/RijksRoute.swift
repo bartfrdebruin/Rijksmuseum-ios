@@ -14,14 +14,22 @@ enum RijksRoute: NetworkRoute {
 	}
 
 	var queryParameters: [String : Any]? {
-		return ["key": "0fiuZFh4"]
+		switch self {
+		case .collection(let page):
+			return [
+				"key": "0fiuZFh4",
+				"p": page
+			]
+		case .detail(let objectNumber):
+			return nil
+		}
 	}
 
 	var headers: [String : String]? {
-		return ["key": "0fiuZFh4"]
+		return nil
 	}
 
-	case collection
+	case collection(page: Int)
 	case detail(objectNumber: String)
 
 	var path: String {

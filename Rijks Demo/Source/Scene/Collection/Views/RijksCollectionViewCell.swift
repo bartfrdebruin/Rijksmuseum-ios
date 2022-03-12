@@ -55,6 +55,7 @@ extension RijksCollectionViewCell {
 
 		contentView.addSubview(horizontalStackView)
 		horizontalStackView.translatesAutoresizingMaskIntoConstraints = false
+
 		NSLayoutConstraint.activate([
 			horizontalStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
 			horizontalStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),

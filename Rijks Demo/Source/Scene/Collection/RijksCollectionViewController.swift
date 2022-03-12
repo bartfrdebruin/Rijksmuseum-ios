@@ -11,19 +11,19 @@ final class RijksCollectionViewController: UIViewController {
 
 	// UI
 	private let collectionView: UICollectionView
-
-	// DataSource
-	private lazy var dataSource = configureDataSource()
+	private let adapter: RijksCollectionViewAdapter
 
 	// VM
 	private var viewModel: RijksCollectionViewModelProtocol
 
 	init(viewModel: RijksCollectionViewModelProtocol) {
 		self.viewModel = viewModel
+		self.adapter = RijksCollectionViewAdapter()
 		self.collectionView = UICollectionView(
 			frame: .zero,
 			collectionViewLayout: UICollectionViewFlowLayout()
 		)
+
 		super.init(nibName: nil, bundle: nil)
 	}
 
@@ -37,6 +37,7 @@ final class RijksCollectionViewController: UIViewController {
 		configureViewHierarchy()
 		configureCollectionView()
 		bindObservables()
+		bindAdapterHandlers()
 		viewModel.getCollection()
 	}
 
@@ -50,7 +51,12 @@ final class RijksCollectionViewController: UIViewController {
 			case .loading:
 				print("loading: ")
 			case .result:
-				self.configureSnapshot()
+				
+				self.adapter.setSections(self.viewModel.sections)
+
+				DispatchQueue.main.async {
+					self.collectionView.reloadData()
+				}
 			case .error(let error):
 				print("error: ", error)
 			}
@@ -58,39 +64,7 @@ final class RijksCollectionViewController: UIViewController {
 	}
 }
 
-// MARK: - Diffable DataSource
-extension RijksCollectionViewController {
-
-	func configureDataSource() -> UICollectionViewDiffableDataSource<Int, RijksArtObject> {
-
-		return UICollectionViewDiffableDataSource(collectionView: collectionView) {
-			(collectionView, indexPath, artObject) -> UICollectionViewCell? in
-
-			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RijksCollectionViewCell.identifier, for: indexPath) as! RijksCollectionViewCell
-
-			cell.configure(artObject: artObject)
-			return cell
-		}
-	}
-
-	func configureSnapshot() {
-
-		var snapshot = NSDiffableDataSourceSnapshot<Int, RijksArtObject>()
-		snapshot.appendSections([1])
-
-		snapshot.appendItems(viewModel.artObjects)
-		dataSource.apply(snapshot)
-	}
-
-	func appendSnapshot() {
-
-//		var snapshot = self.dataSource.snapshot()
-//		snapshot.appendItems(viewModel.duplicateSource())
-//		dataSource.apply(snapshot)
-	}
-}
-
-// MARK: - UI
+// MARK: - UICollectionView
 extension RijksCollectionViewController {
 
 	private func configureViewHierarchy() {
@@ -107,27 +81,28 @@ extension RijksCollectionViewController {
 
 	private func configureCollectionView() {
 
-		collectionView.dataSource = dataSource
-		collectionView.delegate = self
-		collectionView.register(RijksCollectionViewCell.self,
-								forCellWithReuseIdentifier: RijksCollectionViewCell.identifier)
+		adapter.configure(collectionView)
+		if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+
+			layout.minimumLineSpacing = 10
+			layout.itemSize = CGSize(width: view.bounds.width, height: 100)
+			layout.headerReferenceSize = CGSize(width: view.bounds.width, height: 30)
+		}
 	}
-}
 
-extension RijksCollectionViewController: UICollectionViewDelegateFlowLayout {
+	private func bindAdapterHandlers() {
 
-	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+		adapter.willDisplayIndexPath = { [weak self] indexPath in
 
-		return CGSize(width: view.bounds.width, height: 100)
-	}
-}
+			guard let self = self else {
+				return
+			}
 
-// MARK: - UICollectionViewDelegate
-extension RijksCollectionViewController: UICollectionViewDelegate {
+			if self.viewModel.shouldLoadMoreCollections(for: indexPath) {
 
-	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
-
+				self.viewModel.getCollection()
+			}
+		}
 	}
 }
 

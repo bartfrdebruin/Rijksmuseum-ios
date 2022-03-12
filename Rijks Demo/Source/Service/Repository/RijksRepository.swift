@@ -9,7 +9,7 @@ import Foundation
 
 protocol RijksRepositoryProtocol {
 
-	func getCollection(completion: @escaping (_ result: Result<RijksCollection, Error>) -> Void)
+	func getCollection(page: Int, completion: @escaping (_ result: Result<RijksCollection, Error>) -> Void)
 	func getCollectionDetail(objectNumber: String, completion: @escaping (_ result: Result<RijksDetailResponse, Error>) -> Void)
 }
 
@@ -22,9 +22,10 @@ final class RijksRepository: RijksRepositoryProtocol {
 	}
 
 	func getCollection(
+		page: Int,
 		completion: @escaping (_ result: Result<RijksCollection, Error>) -> Void) {
 
-		rijksRequest.getCollection { response in
+		rijksRequest.getCollection(page: page) { response in
 
 			switch response {
 			case .success(let response):

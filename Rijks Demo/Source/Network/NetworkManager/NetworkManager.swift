@@ -50,9 +50,9 @@ final class NetworkManager {
 // MARK: Requests
 extension NetworkManager: RijksRequestProtocol {
 
-	func getCollection(completion: @escaping (Result<RijksCollectionResponse, Error>) -> Void) {
+	func getCollection(page: Int, completion: @escaping (Result<RijksCollectionResponse, Error>) -> Void) {
 
-		let route = RijksRoute.collection
+		let route = RijksRoute.collection(page: page)
 		requestDecodable(route: route, completion: completion)
 	}
 

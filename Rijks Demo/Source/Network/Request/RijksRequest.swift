@@ -9,7 +9,7 @@ import Foundation
 
 protocol RijksRequestProtocol {
 
-	func getCollection(completion: @escaping (_ result: Result<RijksCollectionResponse, Error>) -> Void)
+	func getCollection(page: Int, completion: @escaping (_ result: Result<RijksCollectionResponse, Error>) -> Void)
 	func getCollectionDetail(objectNumber: String, completion: @escaping (_ result: Result<RijksDetailResponse, Error>) -> Void)
 }
 
@@ -21,9 +21,9 @@ final class RijksRequest: RijksRequestProtocol {
 		self.networkManager = networkManager
 	}
 
-	func getCollection(completion: @escaping (Result<RijksCollectionResponse, Error>) -> Void) {
+	func getCollection(page: Int, completion: @escaping (Result<RijksCollectionResponse, Error>) -> Void) {
 
-		networkManager.getCollection { response in
+		networkManager.getCollection(page: page) { response in
 
 			switch response {
 			case .success(let response):

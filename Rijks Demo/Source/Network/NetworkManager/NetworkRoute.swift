@@ -37,8 +37,6 @@ extension NetworkRoute {
 		guard var components = URLComponents(string: baseURL + path) else {
 			throw NetworkError.invalidRequest
 		}
-
-		components.queryItems = [URLQueryItem(name: "key", value: "0fiuZFh4")]
 		
 		// Add the query parameters
 		if let queryParameters = queryParameters, !queryParameters.isEmpty {
@@ -53,7 +51,7 @@ extension NetworkRoute {
 				return URLQueryItem(name: key, value: "\(value)")
 			})
 
-//			components.queryItems?.append(contentsOf: queryItems)
+			components.queryItems = queryItems
 		}
 
 		// Make sure we still have a valid URL

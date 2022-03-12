@@ -9,11 +9,12 @@ import Foundation
 
 protocol RijksCollectionViewModelProtocol {
 
-	var artObjects: [RijksArtObject] { get }
+	var sections: [RijksCollectionSection] { get }
 	var state: State { get }
 	var refreshState: () -> Void { get set }
 
 	func getCollection()
+	func shouldLoadMoreCollections(for indexPath: IndexPath) -> Bool
 }
 
 enum State {
@@ -25,7 +26,7 @@ enum State {
 
 final class RijksCollectionViewModel: RijksCollectionViewModelProtocol {
 
-	var artObjects: [RijksArtObject] = []
+	var sections: [RijksCollectionSection] = []
 
 	private(set) var state: State = .initial {
 		didSet {
@@ -35,6 +36,11 @@ final class RijksCollectionViewModel: RijksCollectionViewModelProtocol {
 
 	var refreshState: () -> Void = {}
 
+	// Pagination
+	private var fetching: Bool = false
+	private let maximumPageIndex = 9
+	private var page = 1
+
 	private let rijksRepository: RijksRepositoryProtocol
 
 	init(rijksRepository: RijksRepositoryProtocol) {
@@ -43,19 +49,37 @@ final class RijksCollectionViewModel: RijksCollectionViewModelProtocol {
 
 	func getCollection() {
 
+		guard !fetching else {
+			return
+		}
+
+		fetching = true
+
 		state = .loading
 
-		rijksRepository.getCollection { result in
+		rijksRepository.getCollection(page: page) { result in
 
 			switch result {
 			case .success(let collection):
 
-				self.artObjects = collection.artObjects
+				self.sections.append(RijksCollectionSection(
+					headerState: "Sectie \(self.sections.count + 1)",
+					items: collection.artObjects
+				))
+
 				self.state = .result
+				self.page += 1
+				self.fetching = false
 
 			case .failure(let error):
 				self.state = .error(error)
+				self.fetching = false
 			}
 		}
+	}
+
+	func shouldLoadMoreCollections(for indexPath: IndexPath) -> Bool {
+
+		return sections.count - 1 == indexPath.section && indexPath.item == maximumPageIndex
 	}
 }
