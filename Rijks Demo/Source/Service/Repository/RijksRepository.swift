@@ -15,17 +15,17 @@ protocol RijksRepositoryProtocol {
 
 final class RijksRepository: RijksRepositoryProtocol {
 
-	private let rijksRequest: RijksRequestProtocol
+	private let networkManager: NetworkManager
 
-	init(rijksRequest: RijksRequest) {
-		self.rijksRequest = rijksRequest
+	init(networkManager: NetworkManager) {
+		self.networkManager = networkManager
 	}
 
 	func getCollection(
 		page: Int,
 		completion: @escaping (_ result: Result<RijksCollection, Error>) -> Void) {
 
-		rijksRequest.getCollection(page: page) { response in
+		networkManager.getCollection(page: page) { response in
 
 			switch response {
 			case .success(let response):
@@ -41,7 +41,7 @@ final class RijksRepository: RijksRepositoryProtocol {
 		objectNumber: String,
 		completion: @escaping (_ result: Result<RijksDetailResponse, Error>) -> Void) {
 
-		rijksRequest.getCollectionDetail(objectNumber: objectNumber,
+		networkManager.getCollectionDetail(objectNumber: objectNumber,
 											completion: { response in
 
 			switch response {
