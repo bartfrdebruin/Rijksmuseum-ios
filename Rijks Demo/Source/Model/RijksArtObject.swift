@@ -7,11 +7,7 @@
 
 import Foundation
 
-struct RijksArtObject: Hashable {
-
-	static func == (lhs: RijksArtObject, rhs: RijksArtObject) -> Bool {
-		return lhs.id == rhs.id
-	}
+struct RijksArtObject {
 
 	let link: String
 	let id: String

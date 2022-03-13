@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RijksCollectionSection: Equatable {
+struct RijksCollectionSection {
 
 	var header: String
 	let items: [RijksArtObject]
