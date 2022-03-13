@@ -26,7 +26,7 @@ struct RijksArtObject: Hashable {
 	let headerImage: RijksImage
 	let productionPlaces: [String]
 
-	init(artObjectResponse: RijksArtObjectResponse) {
+	init(artObjectResponse: RijksCollectionArtObjectResponse) {
 		self.link = artObjectResponse.links.web
 		self.id = artObjectResponse.id
 		self.objectNumber = artObjectResponse.objectNumber

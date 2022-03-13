@@ -13,7 +13,7 @@
 		CC64279A27DCB09E00EF9DD3 /* RijksImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64279927DCB09E00EF9DD3 /* RijksImage.swift */; };
 		CC64279C27DCB0B700EF9DD3 /* RijksMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64279B27DCB0B700EF9DD3 /* RijksMaker.swift */; };
 		CC64279E27DCB11400EF9DD3 /* RijksArtObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64279D27DCB11400EF9DD3 /* RijksArtObject.swift */; };
-		CC6427A227DCB16300EF9DD3 /* RijksArtObjectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6427A127DCB16300EF9DD3 /* RijksArtObjectResponse.swift */; };
+		CC6427A227DCB16300EF9DD3 /* RijksCollectionArtObjectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6427A127DCB16300EF9DD3 /* RijksCollectionArtObjectResponse.swift */; };
 		CC6427A427DCB17E00EF9DD3 /* RijksLinksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6427A327DCB17E00EF9DD3 /* RijksLinksResponse.swift */; };
 		CC6427D427DCBA9A00EF9DD3 /* RijksCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6427D327DCBA9A00EF9DD3 /* RijksCollectionViewLayout.swift */; };
 		CC6427DB27DCBD9600EF9DD3 /* RijksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6427DA27DCBD9600EF9DD3 /* RijksCollectionViewCell.swift */; };
@@ -24,6 +24,7 @@
 		CC6428CF27DD0E5D00EF9DD3 /* RijksDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6428CE27DD0E5D00EF9DD3 /* RijksDetailViewModel.swift */; };
 		CC6428D127DD0E7600EF9DD3 /* RijksDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6428D027DD0E7600EF9DD3 /* RijksDetailViewController.swift */; };
 		CC6428D527DD10D200EF9DD3 /* RijksRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6428D327DD105F00EF9DD3 /* RijksRequest.swift */; };
+		CC7B844527DDFC1900054AEB /* RijksDetailArtObjectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7B844427DDFC1900054AEB /* RijksDetailArtObjectResponse.swift */; };
 		CCB40B2727DB43BE000E4163 /* RijksEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB40B2627DB43BE000E4163 /* RijksEnvironment.swift */; };
 		CCB40B2B27DB46AE000E4163 /* RijksRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB40B2A27DB46AE000E4163 /* RijksRoute.swift */; };
 		CCB40B2D27DB4AAF000E4163 /* RijksCollectionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB40B2C27DB4AAF000E4163 /* RijksCollectionResponse.swift */; };
@@ -76,7 +77,7 @@
 		CC64279927DCB09E00EF9DD3 /* RijksImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksImage.swift; sourceTree = "<group>"; };
 		CC64279B27DCB0B700EF9DD3 /* RijksMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksMaker.swift; sourceTree = "<group>"; };
 		CC64279D27DCB11400EF9DD3 /* RijksArtObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksArtObject.swift; sourceTree = "<group>"; };
-		CC6427A127DCB16300EF9DD3 /* RijksArtObjectResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksArtObjectResponse.swift; sourceTree = "<group>"; };
+		CC6427A127DCB16300EF9DD3 /* RijksCollectionArtObjectResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksCollectionArtObjectResponse.swift; sourceTree = "<group>"; };
 		CC6427A327DCB17E00EF9DD3 /* RijksLinksResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksLinksResponse.swift; sourceTree = "<group>"; };
 		CC6427D327DCBA9A00EF9DD3 /* RijksCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksCollectionViewLayout.swift; sourceTree = "<group>"; };
 		CC6427DA27DCBD9600EF9DD3 /* RijksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -87,6 +88,7 @@
 		CC6428CE27DD0E5D00EF9DD3 /* RijksDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksDetailViewModel.swift; sourceTree = "<group>"; };
 		CC6428D027DD0E7600EF9DD3 /* RijksDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksDetailViewController.swift; sourceTree = "<group>"; };
 		CC6428D327DD105F00EF9DD3 /* RijksRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RijksRequest.swift; sourceTree = "<group>"; };
+		CC7B844427DDFC1900054AEB /* RijksDetailArtObjectResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksDetailArtObjectResponse.swift; sourceTree = "<group>"; };
 		CCB40B2627DB43BE000E4163 /* RijksEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksEnvironment.swift; sourceTree = "<group>"; };
 		CCB40B2A27DB46AE000E4163 /* RijksRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksRoute.swift; sourceTree = "<group>"; };
 		CCB40B2C27DB4AAF000E4163 /* RijksCollectionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksCollectionResponse.swift; sourceTree = "<group>"; };
@@ -303,7 +305,8 @@
 		CCB40B2327DB4392000E4163 /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				CC6427A127DCB16300EF9DD3 /* RijksArtObjectResponse.swift */,
+				CC6427A127DCB16300EF9DD3 /* RijksCollectionArtObjectResponse.swift */,
+				CC7B844427DDFC1900054AEB /* RijksDetailArtObjectResponse.swift */,
 				CCB40B2C27DB4AAF000E4163 /* RijksCollectionResponse.swift */,
 				CCB40B2E27DB56AD000E4163 /* RijksDetailResponse.swift */,
 				CCB40B3027DB57F8000E4163 /* RijksImageResponse.swift */,
@@ -620,11 +623,12 @@
 				CCB40B4027DB8370000E4163 /* NetworkRoute.swift in Sources */,
 				CC64279827DCAFB700EF9DD3 /* RijksCollection.swift in Sources */,
 				CCB40B4227DB850E000E4163 /* NetworkError.swift in Sources */,
-				CC6427A227DCB16300EF9DD3 /* RijksArtObjectResponse.swift in Sources */,
+				CC6427A227DCB16300EF9DD3 /* RijksCollectionArtObjectResponse.swift in Sources */,
 				CC6427DB27DCBD9600EF9DD3 /* RijksCollectionViewCell.swift in Sources */,
 				CCB40B2D27DB4AAF000E4163 /* RijksCollectionResponse.swift in Sources */,
 				CCB40B3B27DB75D3000E4163 /* RijksCollectionViewController.swift in Sources */,
 				CC64289F27DCEB0300EF9DD3 /* RijksCollectionSection.swift in Sources */,
+				CC7B844527DDFC1900054AEB /* RijksDetailArtObjectResponse.swift in Sources */,
 				CCDE4C6B27DA01B900D20F2D /* AppDelegate.swift in Sources */,
 				CCDE4C9B27DA189C00D20F2D /* AppController.swift in Sources */,
 				CC6428D127DD0E7600EF9DD3 /* RijksDetailViewController.swift in Sources */,

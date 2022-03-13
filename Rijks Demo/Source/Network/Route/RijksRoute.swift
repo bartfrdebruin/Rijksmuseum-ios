@@ -39,7 +39,7 @@ enum RijksRoute: NetworkRoute {
 		case .collection:
 			return "en/collection"
 		case .detail(let objectNumber):
-			return "en/collection\(objectNumber)"
+			return "en/collection/\(objectNumber)"
 		}
 	}
 

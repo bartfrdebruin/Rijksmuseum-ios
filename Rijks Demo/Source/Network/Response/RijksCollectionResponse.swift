@@ -10,5 +10,5 @@ import Foundation
 struct RijksCollectionResponse: Decodable {
 
 	let count: Int
-	let artObjects: [RijksArtObjectResponse]
+	let artObjects: [RijksCollectionArtObjectResponse]
 }

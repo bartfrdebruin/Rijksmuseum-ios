@@ -11,8 +11,11 @@ struct RijksMakerResponse: Decodable {
 
 	let name: String
 	let unFixedName: String
-	let placeOfBirth: String
-	let dateOfBirth: String
-	let placeOfDeath: String
+	let placeOfBirth: String?
+	let dateOfBirth: String?
+	let placeOfDeath: String?
 	let occupation: [String]
+	let roles: [String]
+	let nationality: String?
+	let biography: String?
 }

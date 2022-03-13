@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RijksArtObjectResponse: Decodable {
+struct RijksCollectionArtObjectResponse: Decodable {
 
 	let links: RijksLinksResponse
 	let id: String

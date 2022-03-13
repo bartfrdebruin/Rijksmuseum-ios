@@ -12,6 +12,11 @@ protocol RijksDetailViewModelProtocol {
 	var state: State { get }
 	var refreshState: () -> Void { get set }
 
+	var imageURL: URL? { get }
+	var title: String? { get }
+	var description: String? { get }
+	var maker: String? { get }
+
 	func getCollectionDetail()
 }
 
@@ -24,6 +29,24 @@ final class RijksDetailViewModel: RijksDetailViewModelProtocol {
 	}
 
 	var refreshState: () -> Void = {}
+
+	private var artObject: RijksDetailArtObjectResponse?
+
+	var imageURL: URL? {
+		return URL(string: artObject?.webImage.url ?? "")
+	}
+
+	var title: String? {
+		return artObject?.title
+	}
+
+	var description: String? {
+		return artObject?.description
+	}
+
+	var maker: String? {
+		return artObject?.principalMakers.first?.name
+	}
 
 	private let objectNumber: String
 	private let rijksRepository: RijksRepositoryProtocol
@@ -43,7 +66,9 @@ final class RijksDetailViewModel: RijksDetailViewModelProtocol {
 				switch result {
 				case .success(let collectionDetail):
 
+					self.artObject = collectionDetail.artObject
 					self.state = .result
+
 
 				case .failure(let error):
 
