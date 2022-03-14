@@ -106,7 +106,7 @@ extension RijksDetailViewController {
 
 	private func configureMainView() {
 
-		view.backgroundColor = .white
+		view.backgroundColor = .systemBackground
 	}
 
 	private func configureViewHierarchy() {
