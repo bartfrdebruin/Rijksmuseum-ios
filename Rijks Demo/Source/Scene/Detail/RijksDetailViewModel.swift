@@ -25,7 +25,9 @@ final class RijksDetailViewModel: RijksDetailViewModelProtocol {
 
 	private(set) var state: State = .initial {
 		didSet {
-			refreshState()
+			DispatchQueue.main.async {
+				self.refreshState()
+			}
 		}
 	}
 

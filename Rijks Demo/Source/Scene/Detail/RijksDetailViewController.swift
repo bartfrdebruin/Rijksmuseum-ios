@@ -60,19 +60,16 @@ final class RijksDetailViewController: UIViewController {
 				return
 			}
 
-			DispatchQueue.main.async {
-
-				switch self.viewModel.state {
-				case .initial, .loading:
-					self.activityIndicatorView.startAnimating()
-				case .result:
-					self.activityIndicatorView.stopAnimating()
-					self.setViews()
-				case .error(let error):
-					self.activityIndicatorView.stopAnimating()
-					self.errorLabel.text = error.localizedDescription
-					self.errorLabel.isHidden = false
-				}
+			switch self.viewModel.state {
+			case .initial, .loading:
+				self.activityIndicatorView.startAnimating()
+			case .result:
+				self.activityIndicatorView.stopAnimating()
+				self.setViews()
+			case .error(let error):
+				self.activityIndicatorView.stopAnimating()
+				self.errorLabel.text = error.localizedDescription
+				self.errorLabel.isHidden = false
 			}
 		}
 	}

@@ -54,28 +54,25 @@ final class RijksCollectionViewController: UIViewController {
 				return
 			}
 
-			DispatchQueue.main.async {
+			switch self.viewModel.state {
+			case .initial, .loading:
 
-				switch self.viewModel.state {
-				case .initial, .loading:
-
-					if self.viewModel.sections.isEmpty {
-						self.activityIndicatorView.startAnimating()
-					}
-				case .result:
-
-					self.activityIndicatorView.stopAnimating()
-					self.collectionView.isHidden = false
-					self.adapter.setSections(self.viewModel.sections)
-					self.collectionView.reloadData()
-
-				case .error(let error):
-
-					self.activityIndicatorView.stopAnimating()
-					self.collectionView.isHidden = true
-					self.errorLabel.isHidden = false
-					self.errorLabel.text = error.localizedDescription
+				if self.viewModel.sections.isEmpty {
+					self.activityIndicatorView.startAnimating()
 				}
+			case .result:
+
+				self.activityIndicatorView.stopAnimating()
+				self.collectionView.isHidden = false
+				self.adapter.setSections(self.viewModel.sections)
+				self.collectionView.reloadData()
+
+			case .error(let error):
+
+				self.activityIndicatorView.stopAnimating()
+				self.collectionView.isHidden = true
+				self.errorLabel.isHidden = false
+				self.errorLabel.text = error.localizedDescription
 			}
 		}
 	}

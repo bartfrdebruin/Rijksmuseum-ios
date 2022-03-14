@@ -23,7 +23,9 @@ final class RijksCollectionViewModel: RijksCollectionViewModelProtocol {
 
 	private(set) var state: State = .initial {
 		didSet {
-			refreshState()
+			DispatchQueue.main.async {
+				self.refreshState()
+			}
 		}
 	}
 

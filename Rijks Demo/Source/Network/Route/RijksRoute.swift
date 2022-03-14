@@ -9,6 +9,9 @@ import Foundation
 
 enum RijksRoute: NetworkRoute {
 
+	case collection(page: Int)
+	case detail(objectNumber: String)
+
 	var body: Data? {
 		return nil
 	}
@@ -30,9 +33,6 @@ enum RijksRoute: NetworkRoute {
 	var headers: [String : String]? {
 		return nil
 	}
-
-	case collection(page: Int)
-	case detail(objectNumber: String)
 
 	var path: String {
 		switch self {

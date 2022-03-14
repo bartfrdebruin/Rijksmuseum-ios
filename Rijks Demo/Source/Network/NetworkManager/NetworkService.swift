@@ -30,8 +30,6 @@ final class NetworkService {
 			return
 		}
 
-		dataTask?.cancel()
-
 		dataTask = URLSession.shared.dataTask(with: request) { data, response, error in
 
 			if let error = error {

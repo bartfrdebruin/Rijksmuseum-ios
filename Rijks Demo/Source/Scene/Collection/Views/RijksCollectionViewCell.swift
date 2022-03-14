@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 extension RijksCollectionViewCell {
 
@@ -40,6 +41,7 @@ final class RijksCollectionViewCell: UICollectionViewCell {
 		super.prepareForReuse()
 
 		imageView.image = nil
+		imageView.kf.cancelDownloadTask()
 		titleLabel.text = nil
 	}
 
