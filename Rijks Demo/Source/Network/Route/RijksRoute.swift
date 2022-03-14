@@ -44,7 +44,6 @@ enum RijksRoute: NetworkRoute {
 	}
 
 	var method: HTTPMethod {
-
 		switch self {
 		case .collection, .detail:
 			return .GET

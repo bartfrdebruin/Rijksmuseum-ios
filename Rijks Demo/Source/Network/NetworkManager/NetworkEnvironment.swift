@@ -8,7 +8,6 @@
 import Foundation
 
 protocol NetworkEnvironment {
-
 	var baseURL: URL { get }
 	var defaultHeaders: [String: String]? { get }
 }

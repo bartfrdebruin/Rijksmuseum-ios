@@ -16,7 +16,6 @@ protocol NetworkServiceProtocol {
 final class NetworkService {
 
 	private let environment: NetworkEnvironment
-
 	private var dataTask: URLSessionDataTask?
 
 	init(environment: NetworkEnvironment) {

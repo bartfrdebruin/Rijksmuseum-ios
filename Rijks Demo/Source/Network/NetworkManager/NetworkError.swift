@@ -8,7 +8,6 @@
 import Foundation
 
 enum NetworkError: LocalizedError {
-
 	case invalidRequest
 	case noDataAvailable
 	case mappingError(Error)

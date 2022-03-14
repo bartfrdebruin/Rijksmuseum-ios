@@ -16,7 +16,6 @@ final class MockNetworkService: NetworkServiceProtocol {
 	var page = 1
 
 	init(mockState: MockState) {
-
 		self.mockState = mockState
 	}
 

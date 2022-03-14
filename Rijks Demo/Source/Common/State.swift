@@ -8,7 +8,6 @@
 import Foundation
 
 enum State: Equatable {
-
 	case initial
 	case loading
 	case result

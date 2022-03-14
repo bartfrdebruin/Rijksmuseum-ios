@@ -14,10 +14,6 @@ struct RijksEnvironment: NetworkEnvironment {
 	}
 
 	var defaultHeaders: [String: String]? {
-
-		var headers: [String: String] = [:]
-		headers["key"] = "0fiuZFh4"
-		
-		return headers
+		return nil
 	}
 }

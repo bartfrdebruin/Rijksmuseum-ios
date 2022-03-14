@@ -8,7 +8,6 @@
 import Foundation
 
 struct RijksLinksResponse: Decodable {
-
 	let `self`: String
 	let web: String
 }

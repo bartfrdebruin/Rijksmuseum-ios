@@ -8,7 +8,6 @@
 import Foundation
 
 struct RijksImageResponse: Decodable {
-
 	let guid: String
 	let offsetPercentageX: Float
 	let offsetPercentageY: Float

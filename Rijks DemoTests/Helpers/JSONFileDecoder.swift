@@ -10,7 +10,6 @@ import Foundation
 @testable import Rijks_Demo
 
 enum JSONFileDecoderError: Error {
-
 	case fileNotFound
 	case fileNoString
 	case invalidData
@@ -19,7 +18,6 @@ enum JSONFileDecoderError: Error {
 final class JSONFileDecoder {
 
 	lazy var decoder: JSONDecoder = {
-
 		let decoder = JSONDecoder()
 		decoder.keyDecodingStrategy = .convertFromSnakeCase
 		return decoder

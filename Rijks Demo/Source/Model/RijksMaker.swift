@@ -17,7 +17,6 @@ struct RijksMaker {
 	let occupation: [String]
 
 	init(makerResponse: RijksMakerResponse) {
-
 		self.name = makerResponse.name
 		self.unFixedName = makerResponse.unFixedName
 		self.placeOfBirth = makerResponse.placeOfBirth

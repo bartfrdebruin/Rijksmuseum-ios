@@ -8,7 +8,6 @@
 import Foundation
 
 struct RijksCollectionResponse: Decodable {
-
 	let count: Int
 	let artObjects: [RijksCollectionArtObjectResponse]
 }

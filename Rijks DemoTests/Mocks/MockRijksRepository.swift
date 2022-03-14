@@ -25,7 +25,6 @@ final class MockRijksRepository: RijksRepositoryProtocol {
 	var page = 1
 
 	init(mockState: MockState) {
-
 		self.mockState = mockState
 	}
 

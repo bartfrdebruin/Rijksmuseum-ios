@@ -24,7 +24,6 @@ struct RijksDetailArtObject {
 	let documentation: [String]
 
 	init(detailArtObjectResponse: RijksDetailArtObjectResponse) {
-
 		self.id = detailArtObjectResponse.id
 		self.objectNumber = detailArtObjectResponse.objectNumber
 		self.title = detailArtObjectResponse.title

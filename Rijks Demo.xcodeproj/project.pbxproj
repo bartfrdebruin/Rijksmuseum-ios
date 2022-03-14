@@ -15,7 +15,6 @@
 		CC64279E27DCB11400EF9DD3 /* RijksCollectionArtObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64279D27DCB11400EF9DD3 /* RijksCollectionArtObject.swift */; };
 		CC6427A227DCB16300EF9DD3 /* RijksCollectionArtObjectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6427A127DCB16300EF9DD3 /* RijksCollectionArtObjectResponse.swift */; };
 		CC6427A427DCB17E00EF9DD3 /* RijksLinksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6427A327DCB17E00EF9DD3 /* RijksLinksResponse.swift */; };
-		CC6427D427DCBA9A00EF9DD3 /* RijksCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6427D327DCBA9A00EF9DD3 /* RijksCollectionViewLayout.swift */; };
 		CC6427DB27DCBD9600EF9DD3 /* RijksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6427DA27DCBD9600EF9DD3 /* RijksCollectionViewCell.swift */; };
 		CC64283D27DCD71200EF9DD3 /* UIImageView+ImageLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64283C27DCD71200EF9DD3 /* UIImageView+ImageLoading.swift */; };
 		CC64286D27DCE1B600EF9DD3 /* RijksCollectionViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64286C27DCE1B600EF9DD3 /* RijksCollectionViewAdapter.swift */; };
@@ -87,7 +86,6 @@
 		CC64279D27DCB11400EF9DD3 /* RijksCollectionArtObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksCollectionArtObject.swift; sourceTree = "<group>"; };
 		CC6427A127DCB16300EF9DD3 /* RijksCollectionArtObjectResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksCollectionArtObjectResponse.swift; sourceTree = "<group>"; };
 		CC6427A327DCB17E00EF9DD3 /* RijksLinksResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksLinksResponse.swift; sourceTree = "<group>"; };
-		CC6427D327DCBA9A00EF9DD3 /* RijksCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksCollectionViewLayout.swift; sourceTree = "<group>"; };
 		CC6427DA27DCBD9600EF9DD3 /* RijksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksCollectionViewCell.swift; sourceTree = "<group>"; };
 		CC64283C27DCD71200EF9DD3 /* UIImageView+ImageLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+ImageLoading.swift"; sourceTree = "<group>"; };
 		CC64286C27DCE1B600EF9DD3 /* RijksCollectionViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksCollectionViewAdapter.swift; sourceTree = "<group>"; };
@@ -296,7 +294,6 @@
 				CC6427D727DCBD4D00EF9DD3 /* Views */,
 				CCB40B3827DB6D63000E4163 /* RijksCollectionViewModel.swift */,
 				CCB40B3A27DB75D3000E4163 /* RijksCollectionViewController.swift */,
-				CC6427D327DCBA9A00EF9DD3 /* RijksCollectionViewLayout.swift */,
 				CC64286C27DCE1B600EF9DD3 /* RijksCollectionViewAdapter.swift */,
 				CC64289E27DCEB0300EF9DD3 /* RijksCollectionSection.swift */,
 			);
@@ -659,7 +656,6 @@
 				CCB40B3727DB5E04000E4163 /* RijksRepository.swift in Sources */,
 				CCB40B2B27DB46AE000E4163 /* RijksRoute.swift in Sources */,
 				CC64286D27DCE1B600EF9DD3 /* RijksCollectionViewAdapter.swift in Sources */,
-				CC6427D427DCBA9A00EF9DD3 /* RijksCollectionViewLayout.swift in Sources */,
 				CC64279A27DCB09E00EF9DD3 /* RijksImage.swift in Sources */,
 				CC64279C27DCB0B700EF9DD3 /* RijksMaker.swift in Sources */,
 				CC6428CF27DD0E5D00EF9DD3 /* RijksDetailViewModel.swift in Sources */,

@@ -14,7 +14,6 @@ struct RijksImage: Hashable {
 	let url: String
 
 	init(imageResponse: RijksImageResponse) {
-
 		self.width = imageResponse.width
 		self.height = imageResponse.height
 		self.url = imageResponse.url

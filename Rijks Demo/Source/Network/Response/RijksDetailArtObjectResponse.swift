@@ -8,7 +8,6 @@
 import Foundation
 
 struct RijksDetailArtObjectResponse: Decodable {
-
 	let id: String
 	let objectNumber: String
 	let title: String

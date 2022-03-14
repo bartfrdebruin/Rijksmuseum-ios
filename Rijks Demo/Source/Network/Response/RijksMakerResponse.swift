@@ -8,7 +8,6 @@
 import Foundation
 
 struct RijksMakerResponse: Decodable {
-
 	let name: String
 	let unFixedName: String
 	let placeOfBirth: String?

@@ -13,7 +13,6 @@ struct RijksCollection {
 	let artObjects: [RijksCollectionArtObject]
 
 	init(collectionResponse: RijksCollectionResponse) {
-
 		self.count = collectionResponse.count
 		self.artObjects = collectionResponse.artObjects.map({ RijksCollectionArtObject(artObjectResponse: $0 )})
 	}

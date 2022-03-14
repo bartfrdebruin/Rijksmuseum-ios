@@ -8,7 +8,6 @@
 import Foundation
 
 enum HTTPMethod: String {
-
 	case GET
 	case POST
 	case PUT
@@ -17,7 +16,6 @@ enum HTTPMethod: String {
 }
 
 protocol NetworkRoute {
-
 	var path: String { get }
 	var method: HTTPMethod { get }
 	var body: Data? { get }
