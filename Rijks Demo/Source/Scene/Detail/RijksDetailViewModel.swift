@@ -16,6 +16,7 @@ protocol RijksDetailViewModelProtocol {
 	var title: String? { get }
 	var description: String? { get }
 	var maker: String? { get }
+	var artObjectNumber: String? { get }
 
 	func getCollectionDetail()
 }
@@ -46,6 +47,10 @@ final class RijksDetailViewModel: RijksDetailViewModelProtocol {
 
 	var maker: String? {
 		return artObject?.principalMakers.first?.name
+	}
+
+	var artObjectNumber: String? {
+		return artObject?.objectNumber
 	}
 
 	private let objectNumber: String

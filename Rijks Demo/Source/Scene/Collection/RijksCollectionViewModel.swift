@@ -17,13 +17,6 @@ protocol RijksCollectionViewModelProtocol {
 	func shouldLoadMoreCollections(for indexPath: IndexPath) -> Bool
 }
 
-enum State {
-	case initial
-	case loading
-	case result
-	case error(Error)
-}
-
 final class RijksCollectionViewModel: RijksCollectionViewModelProtocol {
 
 	var sections: [RijksCollectionSection] = []

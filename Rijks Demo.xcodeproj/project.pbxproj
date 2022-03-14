@@ -24,6 +24,15 @@
 		CC6428CF27DD0E5D00EF9DD3 /* RijksDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6428CE27DD0E5D00EF9DD3 /* RijksDetailViewModel.swift */; };
 		CC6428D127DD0E7600EF9DD3 /* RijksDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6428D027DD0E7600EF9DD3 /* RijksDetailViewController.swift */; };
 		CC7B844527DDFC1900054AEB /* RijksDetailArtObjectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7B844427DDFC1900054AEB /* RijksDetailArtObjectResponse.swift */; };
+		CC9EF54B27DF3F9200558274 /* JSONFileDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9EF54A27DF3F9200558274 /* JSONFileDecoder.swift */; };
+		CC9EF54D27DF422500558274 /* RijksCollectionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9EF54C27DF422500558274 /* RijksCollectionViewModelTests.swift */; };
+		CC9EF55027DF434500558274 /* MockRijksRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9EF54F27DF434500558274 /* MockRijksRepository.swift */; };
+		CC9EF55227DF46CC00558274 /* rijksCollectionResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = CC9EF55127DF46CC00558274 /* rijksCollectionResponse.json */; };
+		CC9EF55427DF499D00558274 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9EF55327DF499D00558274 /* State.swift */; };
+		CC9EF55627DF50A100558274 /* RijksDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9EF55527DF50A100558274 /* RijksDetailViewModelTests.swift */; };
+		CC9EF55827DF51AD00558274 /* rijksDetailResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = CC9EF55727DF51AD00558274 /* rijksDetailResponse.json */; };
+		CC9EF55A27DF6BF500558274 /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9EF55927DF6BF500558274 /* MockNetworkService.swift */; };
+		CC9EF55C27DF6CDB00558274 /* RijksRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9EF55B27DF6CDB00558274 /* RijksRepositoryTests.swift */; };
 		CCB40B2727DB43BE000E4163 /* RijksEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB40B2627DB43BE000E4163 /* RijksEnvironment.swift */; };
 		CCB40B2B27DB46AE000E4163 /* RijksRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB40B2A27DB46AE000E4163 /* RijksRoute.swift */; };
 		CCB40B2D27DB4AAF000E4163 /* RijksCollectionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB40B2C27DB4AAF000E4163 /* RijksCollectionResponse.swift */; };
@@ -41,7 +50,6 @@
 		CCDE4C6B27DA01B900D20F2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDE4C6A27DA01B900D20F2D /* AppDelegate.swift */; };
 		CCDE4C7427DA01BB00D20F2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCDE4C7327DA01BB00D20F2D /* Assets.xcassets */; };
 		CCDE4C7727DA01BB00D20F2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCDE4C7527DA01BB00D20F2D /* LaunchScreen.storyboard */; };
-		CCDE4C8227DA01BB00D20F2D /* Rijks_DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDE4C8127DA01BB00D20F2D /* Rijks_DemoTests.swift */; };
 		CCDE4C8C27DA01BB00D20F2D /* Rijks_DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDE4C8B27DA01BB00D20F2D /* Rijks_DemoUITests.swift */; };
 		CCDE4C8E27DA01BB00D20F2D /* Rijks_DemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDE4C8D27DA01BB00D20F2D /* Rijks_DemoUITestsLaunchTests.swift */; };
 		CCDE4C9B27DA189C00D20F2D /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDE4C9A27DA189C00D20F2D /* AppController.swift */; };
@@ -88,6 +96,15 @@
 		CC6428CE27DD0E5D00EF9DD3 /* RijksDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksDetailViewModel.swift; sourceTree = "<group>"; };
 		CC6428D027DD0E7600EF9DD3 /* RijksDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksDetailViewController.swift; sourceTree = "<group>"; };
 		CC7B844427DDFC1900054AEB /* RijksDetailArtObjectResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksDetailArtObjectResponse.swift; sourceTree = "<group>"; };
+		CC9EF54A27DF3F9200558274 /* JSONFileDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFileDecoder.swift; sourceTree = "<group>"; };
+		CC9EF54C27DF422500558274 /* RijksCollectionViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksCollectionViewModelTests.swift; sourceTree = "<group>"; };
+		CC9EF54F27DF434500558274 /* MockRijksRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRijksRepository.swift; sourceTree = "<group>"; };
+		CC9EF55127DF46CC00558274 /* rijksCollectionResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rijksCollectionResponse.json; sourceTree = "<group>"; };
+		CC9EF55327DF499D00558274 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		CC9EF55527DF50A100558274 /* RijksDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksDetailViewModelTests.swift; sourceTree = "<group>"; };
+		CC9EF55727DF51AD00558274 /* rijksDetailResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rijksDetailResponse.json; sourceTree = "<group>"; };
+		CC9EF55927DF6BF500558274 /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
+		CC9EF55B27DF6CDB00558274 /* RijksRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksRepositoryTests.swift; sourceTree = "<group>"; };
 		CCB40B2627DB43BE000E4163 /* RijksEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksEnvironment.swift; sourceTree = "<group>"; };
 		CCB40B2A27DB46AE000E4163 /* RijksRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksRoute.swift; sourceTree = "<group>"; };
 		CCB40B2C27DB4AAF000E4163 /* RijksCollectionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksCollectionResponse.swift; sourceTree = "<group>"; };
@@ -108,7 +125,6 @@
 		CCDE4C7627DA01BB00D20F2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CCDE4C7827DA01BB00D20F2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCDE4C7D27DA01BB00D20F2D /* Rijks DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rijks DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CCDE4C8127DA01BB00D20F2D /* Rijks_DemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rijks_DemoTests.swift; sourceTree = "<group>"; };
 		CCDE4C8727DA01BB00D20F2D /* Rijks DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rijks DemoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCDE4C8B27DA01BB00D20F2D /* Rijks_DemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rijks_DemoUITests.swift; sourceTree = "<group>"; };
 		CCDE4C8D27DA01BB00D20F2D /* Rijks_DemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rijks_DemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -181,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				CC64283B27DCD6FC00EF9DD3 /* Extension */,
+				CC9EF55327DF499D00558274 /* State.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -286,6 +303,33 @@
 			path = Collection;
 			sourceTree = "<group>";
 		};
+		CC9EF54827DF3F7600558274 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CC9EF55127DF46CC00558274 /* rijksCollectionResponse.json */,
+				CC9EF55727DF51AD00558274 /* rijksDetailResponse.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CC9EF54927DF3F7600558274 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CC9EF54A27DF3F9200558274 /* JSONFileDecoder.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CC9EF54E27DF430100558274 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				CC9EF54F27DF434500558274 /* MockRijksRepository.swift */,
+				CC9EF55927DF6BF500558274 /* MockNetworkService.swift */,
+			);
+			name = Mocks;
+			path = "Rijks DemoTests/Mocks";
+			sourceTree = SOURCE_ROOT;
+		};
 		CCB40B2227DB4392000E4163 /* Route */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,7 +422,12 @@
 		CCDE4C8027DA01BB00D20F2D /* Rijks DemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				CCDE4C8127DA01BB00D20F2D /* Rijks_DemoTests.swift */,
+				CC9EF54827DF3F7600558274 /* Data */,
+				CC9EF54927DF3F7600558274 /* Helpers */,
+				CC9EF54E27DF430100558274 /* Mocks */,
+				CC9EF54C27DF422500558274 /* RijksCollectionViewModelTests.swift */,
+				CC9EF55527DF50A100558274 /* RijksDetailViewModelTests.swift */,
+				CC9EF55B27DF6CDB00558274 /* RijksRepositoryTests.swift */,
 			);
 			path = "Rijks DemoTests";
 			sourceTree = "<group>";
@@ -508,6 +557,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC9EF55227DF46CC00558274 /* rijksCollectionResponse.json in Resources */,
+				CC9EF55827DF51AD00558274 /* rijksDetailResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,6 +652,7 @@
 				CCB40B3327DB5968000E4163 /* RijksMakerResponse.swift in Sources */,
 				CCB40B2F27DB56AD000E4163 /* RijksDetailResponse.swift in Sources */,
 				CC6427A427DCB17E00EF9DD3 /* RijksLinksResponse.swift in Sources */,
+				CC9EF55427DF499D00558274 /* State.swift in Sources */,
 				CC64289D27DCE5A000EF9DD3 /* RijksCollectionReusableView.swift in Sources */,
 				CCB40B4427DB873F000E4163 /* NetworkService.swift in Sources */,
 				CCD9B87E27DE0C38003CE021 /* RijksDetailArtObject.swift in Sources */,
@@ -632,7 +684,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCDE4C8227DA01BB00D20F2D /* Rijks_DemoTests.swift in Sources */,
+				CC9EF54B27DF3F9200558274 /* JSONFileDecoder.swift in Sources */,
+				CC9EF55027DF434500558274 /* MockRijksRepository.swift in Sources */,
+				CC9EF55A27DF6BF500558274 /* MockNetworkService.swift in Sources */,
+				CC9EF54D27DF422500558274 /* RijksCollectionViewModelTests.swift in Sources */,
+				CC9EF55627DF50A100558274 /* RijksDetailViewModelTests.swift in Sources */,
+				CC9EF55C27DF6CDB00558274 /* RijksRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
