@@ -35,7 +35,7 @@ final class RijksCollectionViewCell: UICollectionViewCell {
 		titleLabel.text = nil
 	}
 
-	func configure(artObject: RijksArtObject) {
+	func configure(artObject: RijksCollectionArtObject) {
 
 		titleLabel.text = artObject.longTitle
 

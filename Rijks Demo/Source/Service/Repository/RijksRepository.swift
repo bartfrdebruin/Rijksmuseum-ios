@@ -10,22 +10,22 @@ import Foundation
 protocol RijksRepositoryProtocol {
 
 	func getCollection(page: Int, completion: @escaping (_ result: Result<RijksCollection, Error>) -> Void)
-	func getCollectionDetail(objectNumber: String, completion: @escaping (_ result: Result<RijksDetailResponse, Error>) -> Void)
+	func getCollectionDetail(objectNumber: String, completion: @escaping (_ result: Result<RijksDetailArtObject, Error>) -> Void)
 }
 
 final class RijksRepository: RijksRepositoryProtocol {
 
-	private let networkManager: NetworkManager
+	private let networkService: NetworkServiceProtocol
 
-	init(networkManager: NetworkManager) {
-		self.networkManager = networkManager
+	init(networkService: NetworkServiceProtocol) {
+		self.networkService = networkService
 	}
 
 	func getCollection(
 		page: Int,
 		completion: @escaping (_ result: Result<RijksCollection, Error>) -> Void) {
 
-		networkManager.getCollection(page: page) { response in
+		networkService.getCollection(page: page) { response in
 
 			switch response {
 			case .success(let response):
@@ -39,14 +39,15 @@ final class RijksRepository: RijksRepositoryProtocol {
 
 	func getCollectionDetail(
 		objectNumber: String,
-		completion: @escaping (_ result: Result<RijksDetailResponse, Error>) -> Void) {
+		completion: @escaping (_ result: Result<RijksDetailArtObject, Error>) -> Void) {
 
-		networkManager.getCollectionDetail(objectNumber: objectNumber,
+		networkService.getCollectionDetail(objectNumber: objectNumber,
 											completion: { response in
 
 			switch response {
 			case .success(let response):
-				completion(.success(response))
+				let artObject = RijksDetailArtObject(detailArtObjectResponse: response.artObject)
+				completion(.success(artObject))
 			case .failure(let error):
 				completion(.failure(error))
 			}

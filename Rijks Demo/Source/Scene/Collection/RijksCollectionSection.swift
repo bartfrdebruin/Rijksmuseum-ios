@@ -10,10 +10,10 @@ import Foundation
 struct RijksCollectionSection {
 
 	var header: String
-	let items: [RijksArtObject]
+	let items: [RijksCollectionArtObject]
 	var count: Int { items.count }
 
-	func item(atItemIndex index: Int) -> RijksArtObject {
+	func item(atItemIndex index: Int) -> RijksCollectionArtObject {
 		return items[index]
 	}
 }

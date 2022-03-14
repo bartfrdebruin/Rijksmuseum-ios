@@ -1,5 +1,5 @@
 //
-//  RijksArtObject.swift
+//  RijksCollectionArtObject.swift
 //  Rijks Demo
 //
 //  Created by Bart on 12/03/2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RijksArtObject {
+struct RijksCollectionArtObject {
 
 	let link: String
 	let id: String
@@ -23,6 +23,7 @@ struct RijksArtObject {
 	let productionPlaces: [String]
 
 	init(artObjectResponse: RijksCollectionArtObjectResponse) {
+
 		self.link = artObjectResponse.links.web
 		self.id = artObjectResponse.id
 		self.objectNumber = artObjectResponse.objectNumber

@@ -10,10 +10,11 @@ import Foundation
 struct RijksCollection {
 
 	let count: Int
-	let artObjects: [RijksArtObject]
+	let artObjects: [RijksCollectionArtObject]
 
 	init(collectionResponse: RijksCollectionResponse) {
+
 		self.count = collectionResponse.count
-		self.artObjects = collectionResponse.artObjects.map({ RijksArtObject(artObjectResponse: $0 )})
+		self.artObjects = collectionResponse.artObjects.map({ RijksCollectionArtObject(artObjectResponse: $0 )})
 	}
 }

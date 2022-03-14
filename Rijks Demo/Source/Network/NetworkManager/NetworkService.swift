@@ -1,5 +1,5 @@
 //
-//  NetworkManager.swift
+//  NetworkService.swift
 //  Rijks Demo
 //
 //  Created by Bart on 11/03/2022.
@@ -7,7 +7,13 @@
 
 import Foundation
 
-final class NetworkManager {
+protocol NetworkServiceProtocol {
+
+	func getCollection(page: Int, completion: @escaping (_ result: Result<RijksCollectionResponse, Error>) -> Void)
+	func getCollectionDetail(objectNumber: String, completion: @escaping (_ result: Result<RijksDetailResponse, Error>) -> Void)
+}
+
+final class NetworkService {
 
 	private let environment: NetworkEnvironment
 
@@ -48,7 +54,7 @@ final class NetworkManager {
 }
 
 // MARK: Requests
-extension NetworkManager: RijksRequestProtocol {
+extension NetworkService: NetworkServiceProtocol {
 
 	func getCollection(
 		page: Int,

@@ -30,7 +30,7 @@ final class RijksDetailViewModel: RijksDetailViewModelProtocol {
 
 	var refreshState: () -> Void = {}
 
-	private var artObject: RijksDetailArtObjectResponse?
+	private var artObject: RijksDetailArtObject?
 
 	var imageURL: URL? {
 		return URL(string: artObject?.webImage.url ?? "")
@@ -64,9 +64,9 @@ final class RijksDetailViewModel: RijksDetailViewModelProtocol {
 			objectNumber: objectNumber) { result in
 
 				switch result {
-				case .success(let collectionDetail):
+				case .success(let artObject):
 
-					self.artObject = collectionDetail.artObject
+					self.artObject = artObject
 					self.state = .result
 
 

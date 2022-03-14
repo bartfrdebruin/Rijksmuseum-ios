@@ -12,7 +12,7 @@ final class RijksCollectionViewAdapter: NSObject {
 
 	private var sections: [RijksCollectionSection] = []
 
-	var selectedArtObject: ((RijksArtObject) -> Void)?
+	var selectedArtObject: ((RijksCollectionArtObject) -> Void)?
 	var willDisplayIndexPath: ((IndexPath) -> Void)?
 
 	func configure(_ collectionView: UICollectionView) {
@@ -37,7 +37,7 @@ final class RijksCollectionViewAdapter: NSObject {
 		return sections[index]
 	}
 
-	func item(at indexPath: IndexPath) -> RijksArtObject {
+	func item(at indexPath: IndexPath) -> RijksCollectionArtObject {
 
 		return section(atSectionIndex: indexPath.section)
 			.item(atItemIndex: indexPath.item)

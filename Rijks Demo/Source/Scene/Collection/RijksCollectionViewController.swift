@@ -176,8 +176,8 @@ extension RijksCollectionViewController {
 
 	static func make() -> RijksCollectionViewController {
 
-		let networkManager = NetworkManager(environment: RijksEnvironment())
-		let repository = RijksRepository(networkManager: networkManager)
+		let networkService = NetworkService(environment: RijksEnvironment())
+		let repository = RijksRepository(networkService: networkService)
 		let viewModel = RijksCollectionViewModel(rijksRepository: repository)
 
 		return RijksCollectionViewController(viewModel: viewModel)

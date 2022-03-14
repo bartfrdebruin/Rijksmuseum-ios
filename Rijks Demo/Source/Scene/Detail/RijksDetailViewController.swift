@@ -193,8 +193,8 @@ extension RijksDetailViewController {
 
 	static func make(objectNumber: String) -> RijksDetailViewController {
 
-		let networkManager = NetworkManager(environment: RijksEnvironment())
-		let repository = RijksRepository(networkManager: networkManager)
+		let networkService = NetworkService(environment: RijksEnvironment())
+		let repository = RijksRepository(networkService: networkService)
 		let viewModel = RijksDetailViewModel(
 			objectNumber: objectNumber,
 			rijksRepository: repository
