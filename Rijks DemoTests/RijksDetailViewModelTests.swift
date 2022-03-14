@@ -29,7 +29,7 @@ final class RijksDetailViewModelTests: XCTestCase {
 		XCTAssertNotNil(viewModel.maker)
 	}
 
-	func testArtObjectNumberMatchesFetchedNumber() {
+	func testArtObjectNumberMatchesFetchedArtObject() {
 
 		// Given
 		let mockRepository = MockRijksRepository(mockState: .succes)

@@ -21,7 +21,7 @@ final class RijksCollectionViewModelTests: XCTestCase {
 		viewModel.getCollection()
 
 		// Then
-		XCTAssertTrue(!viewModel.sections.isEmpty)
+		XCTAssertFalse(viewModel.sections.isEmpty)
 	}
 
 	func testResultState() {

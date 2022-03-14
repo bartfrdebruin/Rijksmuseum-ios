@@ -93,7 +93,7 @@ final class RijksRepositoryTests: XCTestCase {
 			})
 	}
 
-	func testArtObjectNumberMatchesFetchedNumber() throws {
+	func testArtObjectNumberMatchesFetchedArtObject() throws {
 
 		// Given
 		let mockNetworkService = MockNetworkService(mockState: .succes)

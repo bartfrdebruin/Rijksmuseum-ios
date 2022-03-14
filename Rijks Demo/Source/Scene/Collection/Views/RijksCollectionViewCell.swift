@@ -7,6 +7,14 @@
 
 import UIKit
 
+extension RijksCollectionViewCell {
+
+	struct State {
+		let title: String
+		let imageURL: URL?
+	}
+}
+
 final class RijksCollectionViewCell: UICollectionViewCell {
 
 	static let identifier = "RijksCollectionViewCell"
@@ -35,11 +43,11 @@ final class RijksCollectionViewCell: UICollectionViewCell {
 		titleLabel.text = nil
 	}
 
-	func configure(artObject: RijksCollectionArtObject) {
+	func configure(state: State) {
 
-		titleLabel.text = artObject.longTitle
+		titleLabel.text = state.title
 
-		guard let url = URL(string: artObject.headerImage.url) else {
+		guard let url = state.imageURL else {
 			imageView.isHidden = true
 			return
 		}

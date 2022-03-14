@@ -103,7 +103,11 @@ extension RijksCollectionViewAdapter: UICollectionViewDataSource {
 		}
 
 		let item = item(at: indexPath)
-		cell.configure(artObject: item)
+		let state = RijksCollectionViewCell.State(
+			title: item.longTitle,
+			imageURL: URL(string: item.webImage.url))
+
+		cell.configure(state: state)
 		return cell
 	}
 
