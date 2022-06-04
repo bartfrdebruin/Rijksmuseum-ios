@@ -21,6 +21,22 @@ final class NetworkService {
 	init(environment: NetworkEnvironment) {
 		self.environment = environment
 	}
+	
+	private func requestDecodable<T: Decodable>(route: NetworkRoute) async -> (Result<T, Error>) {
+
+		guard let request = try? route.createURLRequest(using: environment) else {
+			return .failure(NetworkError.invalidRequest)
+		}
+		
+		do {
+			let response = try await URLSession.shared.data(for: request)
+			let model = try JSONDecoder().decode(T.self, from: response.0)
+			return .success(model)
+			
+		} catch let error {
+			return .failure(error)
+		}
+	}
 
 	private func requestDecodable<T: Decodable>(route: NetworkRoute,
 												completion: @escaping (Result<T, Error>) -> Void) {
