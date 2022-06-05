@@ -9,48 +9,40 @@ import Foundation
 
 protocol RijksRepositoryProtocol {
 
-	func getCollection(page: Int, completion: @escaping (_ result: Result<RijksCollection, Error>) -> Void)
-	func getCollectionDetail(objectNumber: String, completion: @escaping (_ result: Result<RijksDetailArtObject, Error>) -> Void)
+	func getCollection(page: Int) async -> Result<RijksCollection, Error>
+	func getCollectionDetail(objectNumber: String) async -> Result<RijksDetailArtObject, Error>
 }
 
 final class RijksRepository: RijksRepositoryProtocol {
-
+	
 	private let networkService: NetworkServiceProtocol
 
 	init(networkService: NetworkServiceProtocol) {
 		self.networkService = networkService
 	}
 
-	func getCollection(
-		page: Int,
-		completion: @escaping (_ result: Result<RijksCollection, Error>) -> Void) {
-
-		networkService.getCollection(page: page) { response in
-
-			switch response {
-			case .success(let response):
-				let collection = RijksCollection(collectionResponse: response)
-				completion(.success(collection))
-			case .failure(let error):
-				completion(.failure(error))
-			}
+	func getCollectionDetail(objectNumber: String) async -> Result<RijksDetailArtObject, Error> {
+		
+		let result = await networkService.getCollectionDetail(objectNumber: objectNumber)
+		
+		switch result {
+		case .success(let detail):
+			return .success(RijksDetailArtObject(detailArtObjectResponse: detail.artObject))
+		case .failure(let error):
+			return .failure(error)
 		}
 	}
+	
+	
+	func getCollection(page: Int) async -> Result<RijksCollection, Error> {
 
-	func getCollectionDetail(
-		objectNumber: String,
-		completion: @escaping (_ result: Result<RijksDetailArtObject, Error>) -> Void) {
-
-		networkService.getCollectionDetail(objectNumber: objectNumber,
-											completion: { response in
-
-			switch response {
-			case .success(let response):
-				let artObject = RijksDetailArtObject(detailArtObjectResponse: response.artObject)
-				completion(.success(artObject))
-			case .failure(let error):
-				completion(.failure(error))
-			}
-		})
+		let result = await networkService.getCollection(page: page)
+		
+		switch result {
+		case .success(let collection):
+			return .success(RijksCollection(collectionResponse: collection))
+		case .failure(let error):
+			return .failure(error)
+		}
 	}
 }

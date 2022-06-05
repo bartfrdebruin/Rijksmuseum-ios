@@ -66,22 +66,23 @@ final class RijksDetailViewModel: RijksDetailViewModelProtocol {
 	func getCollectionDetail() {
 
 		state = .loading
-
-		rijksRepository.getCollectionDetail(
-			objectNumber: objectNumber) { result in
-
-				switch result {
-				case .success(let artObject):
-
-					self.artObject = artObject
-					self.state = .result
-
-
-				case .failure(let error):
-
-					self.state = .error(error)
-				}
+		
+		Task.init {
+			
+			let result = await rijksRepository.getCollectionDetail(objectNumber: objectNumber)
+			
+			switch result {
+			case .success(let artObject):
+				
+				self.artObject = artObject
+				self.state = .result
+				
+				
+			case .failure(let error):
+				
+				self.state = .error(error)
 			}
+		}
 	}
 }
 

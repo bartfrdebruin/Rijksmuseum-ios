@@ -49,7 +49,7 @@ final class RijksDetailViewController: UIViewController {
 		configureMakerLabel()
 
 		bindObservables()
-		viewModel.getCollectionDetail()
+		viewModel.getCollectionDetail() 
 	}
 
 	private func bindObservables() {

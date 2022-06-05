@@ -51,21 +51,21 @@ final class RijksCollectionViewModel: RijksCollectionViewModelProtocol {
 		fetching = true
 
 		state = .loading
-
-		rijksRepository.getCollection(page: page) { result in
-
+		
+		Task.init {
+			
+			let result = await rijksRepository.getCollection(page: page)
+			
 			switch result {
 			case .success(let collection):
-
 				self.sections.append(RijksCollectionSection(
 					header: "Sectie \(self.sections.count + 1)",
 					items: collection.artObjects
 				))
-
+				
 				self.state = .result
 				self.page += 1
 				self.fetching = false
-
 			case .failure(let error):
 				self.state = .error(error)
 				self.fetching = false
